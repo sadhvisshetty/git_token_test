@@ -16,10 +16,10 @@ def login():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    if email == USER["email"] and password == USER["password"]:
-        return redirect(url_for("routes.dashboard"))
-    else:
+    if email != USER["email"] or password != USER["password"]:
         return "Invalid Credentials"
+    
+    return redirect(url_for("routes.dashboard"))
 
 @routes.route("/dashboard")
 def dashboard():
