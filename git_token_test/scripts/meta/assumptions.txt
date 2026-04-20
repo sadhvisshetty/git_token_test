@@ -1,0 +1,7 @@
+- Detected Flask app (not FastAPI as stated); defaulting to port 5000
+- MySQL database required (external dependency from mysql-connector-python)
+- Dev environment: 1 replica, minimal resources (100m CPU, 256Mi memory)
+- No cloud provider specified: skipping Terraform generation
+- Docker target: generating docker-compose.yml only
+
+/docker/Dockerfile
