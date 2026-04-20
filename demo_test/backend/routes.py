@@ -7,19 +7,26 @@ USER = {
     "password": "1234"
 }
 
+
+def _validate_credentials(email, password):
+    return email == USER["email"] and password == USER["password"]
+
+
 @routes.route("/")
 def home():
     return render_template("login.html")
+
 
 @routes.route("/login", methods=["POST"])
 def login():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    if email == USER["email"] and password == USER["password"]:
+    if _validate_credentials(email, password):
         return redirect(url_for("routes.dashboard"))
     else:
         return "Invalid Credentials"
+
 
 @routes.route("/dashboard")
 def dashboard():
