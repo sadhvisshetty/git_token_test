@@ -1,0 +1,4 @@
+- Detected Flask (not FastAPI as stated); using Python 3.11 with gunicorn
+- Single monolith service exposed on port 5000
+- Dev environment: 1 replica, minimal resources (no HA required)
+- No cloud provider: Docker-only deployment with docker-compose
